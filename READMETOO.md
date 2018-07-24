@@ -33,12 +33,23 @@ yarn install
 
 ### source files
 
-* https://github.com/UltimateAngular/angular-fundamentals-src
+* https://github.com/UltimateAngular/ngrx-store-effects-app/branches/stale
 
 ### notes
 
 * spread operator creates a brand new object
-* 
+* change detection strategy onPush technology - detects compares the references instead of the object themselves
+* eagerly or lazily loaded modules
+
+* containers components
+  * aware of store
+  * despatches actions
+  * reads data from the store
+
+* presentational components
+  * not aware of store
+  * invokes callbacks via @Output
+  * read data from @Inputs
 
 ```javascript
 const character = { name: 'Han Solo' };
