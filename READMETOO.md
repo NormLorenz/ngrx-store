@@ -10,10 +10,12 @@
 ## keyboard mapping
 https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf
 
-* toggle side bar Ctrl + B
-* Ctrl F2 to Rename Symbol
-* to scroll the screen up and down use the Ctrl + scroll button
-* to scroll the screen left and right use the Ctrl + scroll button
+* Ctrl + B toggle side bar
+* Ctrl + F2 to rename symbol
+* Ctrl + scroll to scroll the screen up and down
+* Shift + scroll to scroll the screen left and right
+* F12 goto definition
+* Alt + Up or Down move the line up or down
 
 ### clone and change remote
 
@@ -50,6 +52,10 @@ yarn install
   * not aware of store
   * invokes callbacks via @Output
   * read data from @Inputs
+
+* the store keeps
+  * router state
+  * entity state
 
 ```javascript
 const character = { name: 'Han Solo' };

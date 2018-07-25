@@ -26,10 +26,7 @@ import { AppComponent } from './containers/app/app.component';
 // routes
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'products' },
-  {
-    path: 'products',
-    loadChildren: '../products/products.module#ProductsModule',
-  },
+  { path: 'products', loadChildren: '../products/products.module#ProductsModule' },
 ];
 
 @NgModule({
@@ -44,4 +41,5 @@ export const ROUTES: Routes = [
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+
+export class AppModule { }
