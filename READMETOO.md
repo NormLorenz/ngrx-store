@@ -42,6 +42,11 @@ yarn install
 * spread operator creates a brand new object
 * change detection strategy onPush technology - detects compares the references instead of the object themselves
 * eagerly or lazily loaded modules
+* looks like ngrx store replaces the services we had before
+* append a '$' to indicate an observable
+* async pipe
+* effects
+* entities
 
 * containers components
   * aware of store
