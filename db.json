@@ -76,10 +76,6 @@
         {
           "id": 2,
           "name": "bacon"
-        },
-        {
-          "id": 5,
-          "name": "mozzarella"
         }
       ],
       "id": 1
@@ -122,17 +118,22 @@
         {
           "id": 5,
           "name": "mozzarella"
-        },
-        {
-          "id": 10,
-          "name": "pepperoni"
         }
       ],
       "id": 2
     },
     {
       "name": "Plain Ol' Pepperoni",
-      "toppings": [],
+      "toppings": [
+        {
+          "id": 10,
+          "name": "pepperoni"
+        },
+        {
+          "id": 4,
+          "name": "chili"
+        }
+      ],
       "id": 3
     }
   ]

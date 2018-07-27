@@ -46,7 +46,86 @@ yarn install
 * append a '$' to indicate an observable
 * async pipe
 * effects
-* entities
+* entities - think of ngrx/store as just a client database (convert action.payload which is an array of object to entities where the key of the object will equal the id of the object)
+* explore why todd uses an index.ts in each folder
+* ngrx/store bind router state (ngrx/router store) to application state as a single source of truth
+* its ok to have multiple store folders
+* import in a logical way higher level first
+
+```javascript
+
+  // observables
+[pizza]='pizza$ | async'
+
+constructor(private store: Store<fromStore.ProductState>) {}
+
+ngOnInit() {
+  this.pizza$ = this.store: Store<fromStore.getSelectedPizza);
+}
+
+```
+
+```javascript
+
+// get selected pizza
+export const getSelected Pizza = createSelector(
+  getPizzasEntities,
+  fromRoot.getRouterState,
+  (entities, router): Pizza => {
+    return router.state && entities[router.state.params.pizzaId];
+  }
+);
+
+```
+
+```javascript
+
+// ES6 destructuring interesting note: the import statement has the {} destructuring ES6 syntax statement too whereas when we use import * as fromRouter from '@ngrx/router-store' we get everything.
+
+const { url } = routerState;
+
+// import only the destructured arguments
+import { createFeatureSelector, ActionReducerMap } from '@ngrx/store';
+
+// whereas this imports everything
+import * as fromRouter from '@ngrx/router-store' 
+
+```
+
+```javascript
+
+// optimizing data strucutures with entities - think of ngrx/store as just a client database (convert action.payload which is an array of object to entities where the key of the object will equal the id of the object). look at the pizzas.reducer.ts to see how its done with a reduce function which converts the array into pure object.
+
+entities: { [id: number] : Pizza}
+
+const pizza: any = {
+  1: {
+    id: 1,
+    name: 'pizza',
+    toppings: []
+  }
+}
+
+```
+
+```javascript
+
+// selectors in index.ts
+// more on selectors https://toddmotto.com/ngrx-store-understanding-state-selectors
+
+export const getPizzasEntities = createSelector(
+  getPizzaState,
+  fromPizza.getPizzasEntities
+);
+
+export const getAllPizzas = createSelector(
+  getPizzasEntities,
+  (entities) => {
+    return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
+  }
+);
+
+```
 
 * containers components
   * aware of store
